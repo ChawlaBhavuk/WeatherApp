@@ -27,6 +27,8 @@
 		906BF5932562F2F5003D5DC6 /* UITableViewHeader+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5922562F2F5003D5DC6 /* UITableViewHeader+Extension.swift */; };
 		906BF5972562F666003D5DC6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5962562F666003D5DC6 /* UIView+Extension.swift */; };
 		906BF59B2562FA41003D5DC6 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF59A2562FA41003D5DC6 /* Extension+String.swift */; };
+		906BF59F25631488003D5DC6 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF59E25631487003D5DC6 /* WeatherViewController.swift */; };
+		906BF5B0256317A7003D5DC6 /* WeatherViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5AF256317A7003D5DC6 /* WeatherViewViewModel.swift */; };
 		B8E36822C59C3B105E0AF028 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5E524AE2A9BC053E303185 /* Pods_WeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		906BF5922562F2F5003D5DC6 /* UITableViewHeader+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewHeader+Extension.swift"; sourceTree = "<group>"; };
 		906BF5962562F666003D5DC6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		906BF59A2562FA41003D5DC6 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		906BF59E25631487003D5DC6 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		906BF5AF256317A7003D5DC6 /* WeatherViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewViewModel.swift; sourceTree = "<group>"; };
 		9C3E18FE66968471415F5015 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BD164779FE279D378F3477EF /* Pods_WeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02256DA31587D22FAD8D8E /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		906BF4E82562C3E2003D5DC6 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				906BF5AE25631778003D5DC6 /* ViewModel */,
 				906BF57C2562E6D2003D5DC6 /* Model */,
 				906BF5512562CD1D003D5DC6 /* Extensions */,
 				906BF54E2562CCCE003D5DC6 /* View */,
@@ -182,6 +187,7 @@
 			children = (
 				906BF4ED2562C3E2003D5DC6 /* WeatherListViewController.swift */,
 				906BF54A2562CC7A003D5DC6 /* SelectLocationViewController.swift */,
+				906BF59E25631487003D5DC6 /* WeatherViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,6 +250,14 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		906BF5AE25631778003D5DC6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				906BF5AF256317A7003D5DC6 /* WeatherViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AB0248C18CD6440FC79C9B95 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +280,7 @@
 				906BF4E22562C3E2003D5DC6 /* Sources */,
 				906BF4E32562C3E2003D5DC6 /* Frameworks */,
 				906BF4E42562C3E2003D5DC6 /* Resources */,
+				906BF5AB25631569003D5DC6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -376,6 +391,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		906BF5AB25631569003D5DC6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		CC415AE7F8D31D85F318430D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				906BF5322562C560003D5DC6 /* NetworkManager.swift in Sources */,
+				906BF59F25631488003D5DC6 /* WeatherViewController.swift in Sources */,
 				906BF5972562F666003D5DC6 /* UIView+Extension.swift in Sources */,
 				906BF4EE2562C3E2003D5DC6 /* WeatherListViewController.swift in Sources */,
 				906BF56B2562CD60003D5DC6 /* NSObject+Extensions.swift in Sources */,
@@ -416,6 +449,7 @@
 				906BF59B2562FA41003D5DC6 /* Extension+String.swift in Sources */,
 				906BF57E2562E6D2003D5DC6 /* MapPin.swift in Sources */,
 				906BF5382562C593003D5DC6 /* AppKeys.swift in Sources */,
+				906BF5B0256317A7003D5DC6 /* WeatherViewViewModel.swift in Sources */,
 				906BF4EA2562C3E2003D5DC6 /* AppDelegate.swift in Sources */,
 				906BF5932562F2F5003D5DC6 /* UITableViewHeader+Extension.swift in Sources */,
 				906BF54B2562CC7A003D5DC6 /* SelectLocationViewController.swift in Sources */,

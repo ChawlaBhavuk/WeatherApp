@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOy-e0-jpi">
-                                <rect key="frame" x="429" y="0.0" width="33" height="33.5"/>
+                                <rect key="frame" x="429" y="16" width="33" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                         <constraints>
                             <constraint firstItem="i1h-rE-LdX" firstAttribute="top" secondItem="Kju-Tp-7uf" secondAttribute="bottom" constant="8" id="3ZC-Aj-f9l"/>
                             <constraint firstAttribute="trailing" secondItem="AOy-e0-jpi" secondAttribute="trailing" constant="16" id="5AK-Lm-xpj"/>
-                            <constraint firstItem="AOy-e0-jpi" firstAttribute="top" secondItem="wNb-Nh-igk" secondAttribute="top" id="6we-P1-Y0U"/>
+                            <constraint firstItem="AOy-e0-jpi" firstAttribute="top" secondItem="wNb-Nh-igk" secondAttribute="top" constant="16" id="6we-P1-Y0U"/>
                             <constraint firstItem="Kju-Tp-7uf" firstAttribute="top" secondItem="wNb-Nh-igk" secondAttribute="top" constant="16" id="9lB-kU-Ogd"/>
                             <constraint firstItem="i1h-rE-LdX" firstAttribute="leading" secondItem="wNb-Nh-igk" secondAttribute="leading" constant="16" id="Abz-u0-1LA"/>
                             <constraint firstItem="Kju-Tp-7uf" firstAttribute="leading" secondItem="wNb-Nh-igk" secondAttribute="leading" constant="16" id="suG-f3-7gH"/>

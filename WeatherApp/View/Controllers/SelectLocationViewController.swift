@@ -9,7 +9,6 @@ import UIKit
 import MapKit
 
 class SelectLocationViewController: UIViewController {
-    //MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
     
     weak var delegate: LocationData?
@@ -19,15 +18,12 @@ class SelectLocationViewController: UIViewController {
         setUpMapView()
     }
     
-    //MARK: - Setup Methods
     func setUpMapView() {
         mapView.showsUserLocation = true
         mapView.showsScale = true
         mapView.delegate = self
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(self.handleTap))
-        gestureRecognizer.delegate = self
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         mapView.addGestureRecognizer(gestureRecognizer)
-        //       currentLocation()
     }
     
     @objc func handleTap(gestureRecognizer: UILongPressGestureRecognizer) {
@@ -39,7 +35,6 @@ class SelectLocationViewController: UIViewController {
         self.setPinUsingMKAnnotation(location: coordinate)
     }
     
-    
     @IBAction private func confirmClicked(_ sender: UIButton) {
         guard let pin = pin else {
             return
@@ -49,19 +44,16 @@ class SelectLocationViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func getLocationName(location: CLLocation, completion: @escaping (String) -> Void){
+    func getLocationName(location: CLLocation, completion: @escaping (String) -> Void) {
         let geocoder = CLGeocoder()
-       
-        
-        geocoder.reverseGeocodeLocation(location) { (placemarksArray, error) in
+        geocoder.reverseGeocodeLocation(location) { (placemarksArray, _) in
             var locationName = ""
-            if (placemarksArray?.count)! > 0 {
-
-                let placemark = placemarksArray?.first
-                locationName =  placemark?.administrativeArea ?? "Device Location"
-            } else {
-                locationName = "Device Location"
+            guard let placemarksArray = placemarksArray, placemarksArray.count > 0 else {
+                completion("Device Location")
+                return
             }
+            let placemark = placemarksArray.first
+            locationName =  placemark?.administrativeArea ?? "Device Location"
             
             completion(locationName)
         }
@@ -76,14 +68,17 @@ class SelectLocationViewController: UIViewController {
     }
     
 }
-//MARK: - CLLocationManagerDelegate Methods
-extension SelectLocationViewController: CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
+
+extension SelectLocationViewController: MKMapViewDelegate {
     
     func setPinUsingMKAnnotation(location: CLLocationCoordinate2D) {
-        self.getLocationName(location: CLLocation(latitude: location.latitude, longitude: location.longitude)) { [weak self]  (locationName) in
-            let pin1 = MapPin(title: locationName, locationName: locationName, coordinate: location, currentTime: self?.time() ?? "")
+        self.getLocationName(location: CLLocation(latitude: location.latitude,
+                                                  longitude: location.longitude)) { [weak self]  (locationName) in
+            let pin1 = MapPin(title: locationName, locationName: locationName,
+                              coordinate: location, currentTime: self?.time() ?? "")
             self?.pin = pin1
-            let coordinateRegion = MKCoordinateRegion(center: pin1.coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
+            let coordinateRegion = MKCoordinateRegion(center: pin1.coordinate,
+                                                      latitudinalMeters: 800, longitudinalMeters: 800)
             self?.mapView.setRegion(coordinateRegion, animated: true)
             self?.mapView.addAnnotations([pin1])
         }
@@ -92,8 +87,9 @@ extension SelectLocationViewController: CLLocationManagerDelegate, MKMapViewDele
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let Identifier = "Pin"
-        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: Identifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: Identifier)
+        let identifier = "Pin"
+        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) ??
+            MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         
         annotationView.canShowCallout = true
         if #available(iOS 11.0, *) {

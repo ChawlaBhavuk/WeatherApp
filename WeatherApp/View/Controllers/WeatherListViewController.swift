@@ -23,8 +23,6 @@ class WeatherListViewController: UIViewController {
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         var networkManager: NetworkRouter = NetworkManager()
@@ -38,11 +36,19 @@ class WeatherListViewController: UIViewController {
         
     }
     
-    
-    
+    func weatherViewController(pin: MapPin) {
+       guard let newViewController = self.storyboard?.instantiateViewController(withIdentifier:
+                                                                                    WeatherViewController.className
+       ) as? WeatherViewController else {
+               return
+       }
+       self.navigationController?.pushViewController(newViewController, animated: true)
+   }
+
     @IBAction func addLocationClicked(_ sender: UIBarButtonItem) {
         guard let newViewController = self.storyboard?.instantiateViewController(withIdentifier:
-                                                                                    SelectLocationViewController.className)
+                                                                                    SelectLocationViewController.className
+        )
                 as? SelectLocationViewController else {
             return
         }
@@ -65,6 +71,10 @@ extension WeatherListViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.weatherViewController(pin: pins[indexPath.row])
+    }
+    
 }
 
 extension WeatherListViewController: LocationData {
@@ -77,4 +87,3 @@ extension WeatherListViewController: LocationData {
 protocol LocationData: AnyObject {
     func getLocation(pin: MapPin)
 }
-

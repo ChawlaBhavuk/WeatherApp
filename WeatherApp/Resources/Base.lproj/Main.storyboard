@@ -104,6 +104,33 @@
             </objects>
             <point key="canvasLocation" x="1679.7101449275362" y="38.839285714285715"/>
         </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="40t-4F-QoZ">
+            <objects>
+                <viewController storyboardIdentifier="WeatherViewController" id="J6j-tJ-UZS" customClass="WeatherViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ONR-Zl-Af1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pIj-G8-88z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="93p-Db-yks"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="93p-Db-yks" firstAttribute="bottom" secondItem="pIj-G8-88z" secondAttribute="bottom" id="1Ut-bX-3B8"/>
+                            <constraint firstItem="93p-Db-yks" firstAttribute="trailing" secondItem="pIj-G8-88z" secondAttribute="trailing" id="6d6-Gb-HmT"/>
+                            <constraint firstItem="pIj-G8-88z" firstAttribute="leading" secondItem="93p-Db-yks" secondAttribute="leading" id="ah5-B4-8wR"/>
+                            <constraint firstItem="pIj-G8-88z" firstAttribute="top" secondItem="93p-Db-yks" secondAttribute="top" id="pLI-ws-cN7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1b-qB-NcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2485" y="35"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="d02-x3-1Y1">
             <objects>

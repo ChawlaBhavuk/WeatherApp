@@ -32,7 +32,7 @@ class LocationTableViewCell: UITableViewCell {
             }
             timeLabel.text = item.currentTime
             locationLabel.text = item.title
-            tempLabel.attributedText = "\(String(Int.random(in: 10..<50))) .".formattedDetailsString(with: tempLabel.font, color: UIColor.black)
+            tempLabel.text = "\(String(Int.random(in: 10..<50)))°"
             self.bringSubviewToFront(baseView)
         }
     }
