@@ -44,6 +44,7 @@ class SelectLocationViewController: UIViewController {
         guard let pin = pin else {
             return
         }
+        self.mapView.removeFromSuperview()
         delegate?.getLocation(pin: pin)
         self.dismiss(animated: true, completion: nil)
     }
@@ -66,17 +67,25 @@ class SelectLocationViewController: UIViewController {
         }
     }
     
+    private func time() -> String {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        return "\(hour): \(minutes)"
+    }
+    
 }
 //MARK: - CLLocationManagerDelegate Methods
 extension SelectLocationViewController: CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
     func setPinUsingMKAnnotation(location: CLLocationCoordinate2D) {
-        self.getLocationName(location: CLLocation(latitude: location.latitude, longitude: location.longitude)) {  (locationName) in
-            let pin1 = MapPin(title: locationName, locationName: locationName, coordinate: location)
-            self.pin = pin1
+        self.getLocationName(location: CLLocation(latitude: location.latitude, longitude: location.longitude)) { [weak self]  (locationName) in
+            let pin1 = MapPin(title: locationName, locationName: locationName, coordinate: location, currentTime: self?.time() ?? "")
+            self?.pin = pin1
             let coordinateRegion = MKCoordinateRegion(center: pin1.coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
-            self.mapView.setRegion(coordinateRegion, animated: true)
-            self.mapView.addAnnotations([pin1])
+            self?.mapView.setRegion(coordinateRegion, animated: true)
+            self?.mapView.addAnnotations([pin1])
         }
         
     }

@@ -20,6 +20,13 @@
 		906BF54B2562CC7A003D5DC6 /* SelectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF54A2562CC7A003D5DC6 /* SelectLocationViewController.swift */; };
 		906BF56B2562CD60003D5DC6 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF56A2562CD60003D5DC6 /* NSObject+Extensions.swift */; };
 		906BF57E2562E6D2003D5DC6 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF57D2562E6D2003D5DC6 /* MapPin.swift */; };
+		906BF5882562F2B6003D5DC6 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5862562F2B6003D5DC6 /* LocationTableViewCell.swift */; };
+		906BF5892562F2B6003D5DC6 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 906BF5872562F2B6003D5DC6 /* LocationTableViewCell.xib */; };
+		906BF58E2562F2DD003D5DC6 /* UITableView+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF58C2562F2DD003D5DC6 /* UITableView+Operations.swift */; };
+		906BF58F2562F2DD003D5DC6 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF58D2562F2DD003D5DC6 /* UITableViewCell+Extension.swift */; };
+		906BF5932562F2F5003D5DC6 /* UITableViewHeader+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5922562F2F5003D5DC6 /* UITableViewHeader+Extension.swift */; };
+		906BF5972562F666003D5DC6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5962562F666003D5DC6 /* UIView+Extension.swift */; };
+		906BF59B2562FA41003D5DC6 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF59A2562FA41003D5DC6 /* Extension+String.swift */; };
 		B8E36822C59C3B105E0AF028 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5E524AE2A9BC053E303185 /* Pods_WeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +59,13 @@
 		906BF54A2562CC7A003D5DC6 /* SelectLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationViewController.swift; sourceTree = "<group>"; };
 		906BF56A2562CD60003D5DC6 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		906BF57D2562E6D2003D5DC6 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		906BF5862562F2B6003D5DC6 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		906BF5872562F2B6003D5DC6 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		906BF58C2562F2DD003D5DC6 /* UITableView+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Operations.swift"; sourceTree = "<group>"; };
+		906BF58D2562F2DD003D5DC6 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		906BF5922562F2F5003D5DC6 /* UITableViewHeader+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewHeader+Extension.swift"; sourceTree = "<group>"; };
+		906BF5962562F666003D5DC6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		906BF59A2562FA41003D5DC6 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		9C3E18FE66968471415F5015 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BD164779FE279D378F3477EF /* Pods_WeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02256DA31587D22FAD8D8E /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +208,7 @@
 		906BF54E2562CCCE003D5DC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				906BF5832562F0DA003D5DC6 /* CustomCell */,
 				906BF53D2562C92D003D5DC6 /* Controllers */,
 			);
 			path = View;
@@ -202,7 +217,12 @@
 		906BF5512562CD1D003D5DC6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				906BF59A2562FA41003D5DC6 /* Extension+String.swift */,
+				906BF5922562F2F5003D5DC6 /* UITableViewHeader+Extension.swift */,
+				906BF58C2562F2DD003D5DC6 /* UITableView+Operations.swift */,
+				906BF58D2562F2DD003D5DC6 /* UITableViewCell+Extension.swift */,
 				906BF56A2562CD60003D5DC6 /* NSObject+Extensions.swift */,
+				906BF5962562F666003D5DC6 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +233,15 @@
 				906BF57D2562E6D2003D5DC6 /* MapPin.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		906BF5832562F0DA003D5DC6 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				906BF5862562F2B6003D5DC6 /* LocationTableViewCell.swift */,
+				906BF5872562F2B6003D5DC6 /* LocationTableViewCell.xib */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		AB0248C18CD6440FC79C9B95 /* Pods */ = {
@@ -310,6 +339,7 @@
 			files = (
 				906BF4F62562C3E3003D5DC6 /* LaunchScreen.storyboard in Resources */,
 				906BF4F32562C3E3003D5DC6 /* Assets.xcassets in Resources */,
+				906BF5892562F2B6003D5DC6 /* LocationTableViewCell.xib in Resources */,
 				906BF4F12562C3E2003D5DC6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,12 +406,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				906BF5322562C560003D5DC6 /* NetworkManager.swift in Sources */,
+				906BF5972562F666003D5DC6 /* UIView+Extension.swift in Sources */,
 				906BF4EE2562C3E2003D5DC6 /* WeatherListViewController.swift in Sources */,
 				906BF56B2562CD60003D5DC6 /* NSObject+Extensions.swift in Sources */,
+				906BF58E2562F2DD003D5DC6 /* UITableView+Operations.swift in Sources */,
+				906BF5882562F2B6003D5DC6 /* LocationTableViewCell.swift in Sources */,
 				906BF5332562C560003D5DC6 /* AppEndPoint.swift in Sources */,
+				906BF58F2562F2DD003D5DC6 /* UITableViewCell+Extension.swift in Sources */,
+				906BF59B2562FA41003D5DC6 /* Extension+String.swift in Sources */,
 				906BF57E2562E6D2003D5DC6 /* MapPin.swift in Sources */,
 				906BF5382562C593003D5DC6 /* AppKeys.swift in Sources */,
 				906BF4EA2562C3E2003D5DC6 /* AppDelegate.swift in Sources */,
+				906BF5932562F2F5003D5DC6 /* UITableViewHeader+Extension.swift in Sources */,
 				906BF54B2562CC7A003D5DC6 /* SelectLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

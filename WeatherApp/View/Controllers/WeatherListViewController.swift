@@ -12,7 +12,16 @@ class WeatherListViewController: UIViewController {
     var pins = [MapPin]()
     
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.tableFooterView = UIView()
+            tableView.separatorStyle = .singleLine
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.register(cellClass: LocationTableViewCell.self)
+            
+        }
+    }
     
     
     
@@ -42,9 +51,26 @@ class WeatherListViewController: UIViewController {
     }
 }
 
+// MARK: Tableview implementation
+extension WeatherListViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        pins.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: LocationTableViewCell = tableView.dequeue(cellClass:
+                                                                LocationTableViewCell.self, forIndexPath: indexPath)
+        cell.item = pins[indexPath.row]
+        return cell
+    }
+    
+}
+
 extension WeatherListViewController: LocationData {
     func getLocation(pin: MapPin) {
         pins.append(pin)
+        tableView.reloadData()
     }
 }
 
