@@ -14,6 +14,9 @@
 		906BF4F32562C3E3003D5DC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 906BF4F22562C3E3003D5DC6 /* Assets.xcassets */; };
 		906BF4F62562C3E3003D5DC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906BF4F42562C3E3003D5DC6 /* LaunchScreen.storyboard */; };
 		906BF5012562C3E3003D5DC6 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5002562C3E3003D5DC6 /* WeatherAppTests.swift */; };
+		906BF5322562C560003D5DC6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF52F2562C560003D5DC6 /* NetworkManager.swift */; };
+		906BF5332562C560003D5DC6 /* AppEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5312562C560003D5DC6 /* AppEndPoint.swift */; };
+		906BF5382562C593003D5DC6 /* AppKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF5372562C593003D5DC6 /* AppKeys.swift */; };
 		B8E36822C59C3B105E0AF028 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5E524AE2A9BC053E303185 /* Pods_WeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		906BF4FC2562C3E3003D5DC6 /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		906BF5002562C3E3003D5DC6 /* WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppTests.swift; sourceTree = "<group>"; };
 		906BF5022562C3E3003D5DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		906BF52F2562C560003D5DC6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		906BF5312562C560003D5DC6 /* AppEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEndPoint.swift; sourceTree = "<group>"; };
+		906BF5372562C593003D5DC6 /* AppKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeys.swift; sourceTree = "<group>"; };
 		9C3E18FE66968471415F5015 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BD164779FE279D378F3477EF /* Pods_WeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02256DA31587D22FAD8D8E /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 		906BF4E82562C3E2003D5DC6 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				906BF5362562C593003D5DC6 /* AppConstants */,
+				906BF52D2562C560003D5DC6 /* NetworkLayer */,
 				906BF4E92562C3E2003D5DC6 /* AppDelegate.swift */,
 				906BF4ED2562C3E2003D5DC6 /* ViewController.swift */,
 				906BF4EF2562C3E2003D5DC6 /* Main.storyboard */,
@@ -115,6 +123,39 @@
 				906BF5022562C3E3003D5DC6 /* Info.plist */,
 			);
 			path = WeatherAppTests;
+			sourceTree = "<group>";
+		};
+		906BF52D2562C560003D5DC6 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				906BF52E2562C560003D5DC6 /* Manager */,
+				906BF5302562C560003D5DC6 /* EndPoint */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		906BF52E2562C560003D5DC6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				906BF52F2562C560003D5DC6 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		906BF5302562C560003D5DC6 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				906BF5312562C560003D5DC6 /* AppEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		906BF5362562C593003D5DC6 /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				906BF5372562C593003D5DC6 /* AppKeys.swift */,
+			);
+			path = AppConstants;
 			sourceTree = "<group>";
 		};
 		AB0248C18CD6440FC79C9B95 /* Pods */ = {
@@ -277,7 +318,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906BF5322562C560003D5DC6 /* NetworkManager.swift in Sources */,
 				906BF4EE2562C3E2003D5DC6 /* ViewController.swift in Sources */,
+				906BF5332562C560003D5DC6 /* AppEndPoint.swift in Sources */,
+				906BF5382562C593003D5DC6 /* AppKeys.swift in Sources */,
 				906BF4EA2562C3E2003D5DC6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
