@@ -11,11 +11,10 @@ class WeatherListViewController: UIViewController {
     
     var pins = [MapPin]()
     
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()
-            tableView.separatorStyle = .singleLine
+            tableView.separatorStyle = .none
             tableView.delegate = self
             tableView.dataSource = self
             tableView.register(cellClass: LocationTableViewCell.self)
@@ -25,7 +24,17 @@ class WeatherListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.reloadData()
+    }
+    
+    func reloadData() {
+        if pins.count > 0 {
+            tableView.resetBackgroundView()
+        } else {
+            tableView.setEmptyView(title: AppLocalization.CommonStrings.noData,
+                                   message: AppLocalization.CommonStrings.addData)
+        }
+        tableView.reloadData()
     }
     
     func weatherViewController(pin: MapPin) {
@@ -37,7 +46,6 @@ class WeatherListViewController: UIViewController {
         let viewModel = WeatherViewViewModel(pin: pin)
         newViewController.viewModel = viewModel
         self.present(newViewController, animated: true, completion: nil)
-//       self.navigationController?.pushViewController(newViewController, animated: true)
    }
 
     @IBAction func addLocationClicked(_ sender: UIBarButtonItem) {
@@ -76,7 +84,7 @@ extension WeatherListViewController: UITableViewDataSource, UITableViewDelegate 
 extension WeatherListViewController: LocationData {
     func getLocation(pin: MapPin) {
         pins.append(pin)
-        tableView.reloadData()
+        self.reloadData()
     }
 }
 

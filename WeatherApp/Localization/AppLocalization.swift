@@ -11,6 +11,8 @@ struct AppLocalization {
     
     struct CommonStrings {
         static let loading = "Loading".localized()
+        static let noData = "No data found.".localized()
+        static let addData = "Click on Add to add new Location".localized()
     }
     
     struct MoviesList {
