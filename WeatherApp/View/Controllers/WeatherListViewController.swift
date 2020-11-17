@@ -25,14 +25,6 @@ class WeatherListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var networkManager: NetworkRouter = NetworkManager()
-        //         Do any additional setup after loading the view.
-        //
-        //
-        //        networkManager.getDataFromApi(type: String.self,
-        //                                           apiCall: .weatherList, postData: nil) { [weak self] (jsonData, error) in
-        //
-        //        }
         
     }
     
@@ -42,16 +34,20 @@ class WeatherListViewController: UIViewController {
        ) as? WeatherViewController else {
                return
        }
-       self.navigationController?.pushViewController(newViewController, animated: true)
+        let viewModel = WeatherViewViewModel(pin: pin)
+        newViewController.viewModel = viewModel
+        self.present(newViewController, animated: true, completion: nil)
+//       self.navigationController?.pushViewController(newViewController, animated: true)
    }
 
     @IBAction func addLocationClicked(_ sender: UIBarButtonItem) {
         guard let newViewController = self.storyboard?.instantiateViewController(withIdentifier:
-                                                                                    SelectLocationViewController.className
-        )
+                                                                                    SelectLocationViewController
+                                                                                    .className)
                 as? SelectLocationViewController else {
             return
         }
+       
         newViewController.delegate = self
         self.present(newViewController, animated: true, completion: nil)
     }

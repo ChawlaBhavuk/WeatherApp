@@ -7,6 +7,7 @@ target 'WeatherApp' do
 
   # Pods for WeatherApp
  pod 'SwiftLint'
+ pod 'SVProgressHUD'
 
   target 'WeatherAppTests' do
     inherit! :search_paths

@@ -15,14 +15,7 @@ class LocationTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-//        self.applyGradient(colours: [UIColor.blue, UIColor.white])
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+        self.selectionStyle = .none
     }
     
     var item: MapPin? {

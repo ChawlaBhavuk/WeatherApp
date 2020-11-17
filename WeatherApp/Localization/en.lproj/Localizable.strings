@@ -1,0 +1,14 @@
+/* 
+ Localizable.strings
+ WeatherApp
+ 
+ Created by Chawla Bhavuk on 17/11/2020.
+ */
+
+
+// Common Strings
+"Loading" = "Loading...";
+"Some Error occurs please try again!!" = "Some Error occurs please try again!!";
+"Warning" = "Warning";
+"Retry" = "Retry";
+

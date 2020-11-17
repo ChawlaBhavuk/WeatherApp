@@ -63,7 +63,23 @@ class NetworkManager: NetworkRouter {
     private func commonEndPoint(apiCall: ApiCall, token: String,
                                 httpMethod: HTTPMethod = .get, params: [String: Any]?) -> EndPointType? {
         var endpoint = APIEndPoint.baseUrl
-        endpoint += "data/2.5/weather?lat=0&lon=0&appid=c6e381d8c7ff98f0fee43775817cf6ad&units=metric"
+        switch apiCall {
+        case .todayForecast:
+            if let lat = params?[AppKeys.lat] as? String,
+               let lon = params?[AppKeys.lon] as? String {
+                endpoint += AppKeys.data + "/2.5/" + AppKeys.weather + "?" +
+                    AppKeys.lat + "=" + lat + "&" + AppKeys.lon + "=" + lon + "&" +
+                    AppKeys.appid + "=" + APIEndPoint.apiKey
+            }
+        case .daysForecast:
+            if let lat = params?[AppKeys.lat] as? String,
+               let lon = params?[AppKeys.lon] as? String {
+                endpoint += AppKeys.data + "/2.5/" + AppKeys.forecast + "?" +
+                    AppKeys.lat + "=" + lat + "&" + AppKeys.lon + "=" + lon + "&" +
+                    AppKeys.appid + "=" + APIEndPoint.apiKey
+            }
+        }
+
         debugPrint(endpoint)
         guard let url = URL(string: endpoint) else {
             return nil
@@ -75,5 +91,6 @@ class NetworkManager: NetworkRouter {
 }
 
 enum ApiCall {
-    case weatherList
+    case todayForecast
+    case daysForecast
 }

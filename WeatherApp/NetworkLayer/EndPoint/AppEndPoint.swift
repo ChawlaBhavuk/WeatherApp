@@ -33,6 +33,6 @@ enum HTTPMethod: String {
 
 struct APIEndPoint {
     static let baseUrl = "http://api.openweathermap.org/"
-    static let apiKey = "55957fcf3ba81b137f8fc01ac5a31fb5"
+    static let apiKey = "c6e381d8c7ff98f0fee43775817cf6ad"
     static let image = "https://image.tmdb.org/t/p/"
 }
