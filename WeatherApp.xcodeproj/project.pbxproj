@@ -54,6 +54,7 @@
 		906BF6352563CE21003D5DC6 /* WeatherListViewControllerTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF6332563CE20003D5DC6 /* WeatherListViewControllerTestCases.swift */; };
 		906BF6362563CE21003D5DC6 /* WeatherViewControllerTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF6342563CE20003D5DC6 /* WeatherViewControllerTestCases.swift */; };
 		906BF6402563CF3B003D5DC6 /* SelectLocationViewControllerTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906BF63F2563CF3B003D5DC6 /* SelectLocationViewControllerTestCases.swift */; };
+		906BF6442563D0A9003D5DC6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 906BF6432563D0A9003D5DC6 /* README.md */; };
 		B8E36822C59C3B105E0AF028 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5E524AE2A9BC053E303185 /* Pods_WeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		906BF6332563CE20003D5DC6 /* WeatherListViewControllerTestCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherListViewControllerTestCases.swift; sourceTree = "<group>"; };
 		906BF6342563CE20003D5DC6 /* WeatherViewControllerTestCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerTestCases.swift; sourceTree = "<group>"; };
 		906BF63F2563CF3B003D5DC6 /* SelectLocationViewControllerTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationViewControllerTestCases.swift; sourceTree = "<group>"; };
+		906BF6432563D0A9003D5DC6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9C3E18FE66968471415F5015 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BD164779FE279D378F3477EF /* Pods_WeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02256DA31587D22FAD8D8E /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		906BF4DD2562C3E2003D5DC6 = {
 			isa = PBXGroup;
 			children = (
+				906BF6432563D0A9003D5DC6 /* README.md */,
 				906BF4E82562C3E2003D5DC6 /* WeatherApp */,
 				906BF4FF2562C3E3003D5DC6 /* WeatherAppTests */,
 				906BF4E72562C3E2003D5DC6 /* Products */,
@@ -491,6 +494,7 @@
 				906BF4F32562C3E3003D5DC6 /* Assets.xcassets in Resources */,
 				906BF5F22563AAF9003D5DC6 /* DataCollectionViewCell.xib in Resources */,
 				906BF5892562F2B6003D5DC6 /* LocationTableViewCell.xib in Resources */,
+				906BF6442563D0A9003D5DC6 /* README.md in Resources */,
 				906BF4F12562C3E2003D5DC6 /* Main.storyboard in Resources */,
 				906BF5EC2563AA09003D5DC6 /* WeatherReportTableViewCell.xib in Resources */,
 			);
@@ -745,7 +749,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -800,7 +804,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

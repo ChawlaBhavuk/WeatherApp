@@ -18,7 +18,6 @@ class WeatherReportTableViewCell: UITableViewCell {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.backgroundColor = .clear
-            collectionView.automaticallyAdjustsScrollIndicatorInsets = false
         }
     }
     
