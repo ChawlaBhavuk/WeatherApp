@@ -10,6 +10,7 @@ target 'WeatherApp' do
  pod 'SVProgressHUD'
 
   target 'WeatherAppTests' do
+    pod 'OHHTTPStubs/Swift'
     inherit! :search_paths
     # Pods for testing
   end

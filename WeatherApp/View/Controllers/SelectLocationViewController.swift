@@ -59,7 +59,7 @@ class SelectLocationViewController: UIViewController {
         }
     }
     
-    private func time() -> String {
+     func time() -> String {
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)

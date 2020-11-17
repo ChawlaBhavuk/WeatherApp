@@ -1,0 +1,43 @@
+{
+    "coord": {
+        "lon": 57.61,
+        "lat": -20.15
+    },
+    "weather": [
+        {
+            "id": 521,
+            "main": "Rain",
+            "description": "shower rain",
+            "icon": "09d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 298.47,
+        "feels_like": 297.11,
+        "temp_min": 298.15,
+        "temp_max": 298.71,
+        "pressure": 1014,
+        "humidity": 69
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 6.7,
+        "deg": 170
+    },
+    "clouds": {
+        "all": 75
+    },
+    "dt": 1605603909,
+    "sys": {
+        "type": 1,
+        "id": 2061,
+        "country": "MU",
+        "sunrise": 1605576108,
+        "sunset": 1605623256
+    },
+    "timezone": 14400,
+    "id": 1106621,
+    "name": "Congomah",
+    "cod": 200
+}
